@@ -8,7 +8,7 @@ Define => Plan => Implement
 ### Define
 
 ```sh
-/softspec:defined define what you want to do...
+/softspec:define tell what you want to do...
 ```
 
 With this command you can defined what you want, then it will create 'definition.md' file. Review this file manually after file created. Request updates if you are not happy with result.
