@@ -1,5 +1,5 @@
 ---
-name: "AIDEV: Define"
+name: "SOFTSPEC: Define"
 description: Define - create what you want to build specification file.
 category: Workflow
 tags: [workflow, artifacts, experimental]
@@ -12,7 +12,7 @@ I'll create a change with artifact:
 
 ---
 
-**Input**: The argument after `/aidev:define` is the change name (kebab-case), OR a description of what the user wants to build.
+**Input**: The argument after `/softspec:define` is the change name (kebab-case), OR a description of what the user wants to build.
 
 **Steps**
 
@@ -27,15 +27,15 @@ I'll create a change with artifact:
 
 2. **Create the change directory**
    ```bash
-   mkdir aidev/changes/<name>
+   mkdir softspec/changes/<name>
    ```
-   This creates a scaffolded change at `aidev/changes/<name>/`. For example if change name is `add-user-auth`; directory path will be `aidev/changes/add-user-auth`
+   This creates a scaffolded change at `softspec/changes/<name>/`. For example if change name is `add-user-auth`; directory path will be `softspec/changes/add-user-auth`
 
 3. **Create definition.md file**
-   Create a file named `definition.md` under the change file. For example is change name is `add-user-auth`; file path will be `aidev/changes/add-user-auth/definition.md`
+   Create a file named `definition.md` under the change file. For example is change name is `add-user-auth`; file path will be `softspec/changes/add-user-auth/definition.md`
    In this file write a change definition with user provided info. Use this template:
    ```
-   # AiDev Definion File
+   # Softspec Definion File
 
    ## Change Name
    write the change name here.
@@ -49,7 +49,7 @@ I'll create a change with artifact:
    ```
 
 4. **Update state.md file**
-   Update `aidev/state.json` file with change name and status 'defined'. If this file not exist; create it with content below:
+   Update `softspec/state.json` file with change name and status 'defined'. If this file not exist; create it with content below:
    ```
    {
       "current-change": {
@@ -61,4 +61,4 @@ I'll create a change with artifact:
 
 4. **Guiding user**
    Guide user to review definition file. And it he thinks something is missing, he need to update file manually or with ai.
-   Guide user to next step. User can move next step with `/aidev:plan`
+   Guide user to next step. User can move next step with `/softspec:plan`

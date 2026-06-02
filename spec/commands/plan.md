@@ -1,5 +1,5 @@
 ---
-name: "AIDEV: Plan"
+name: "SOFTSPEC: Plan"
 description: Plan - create a plan and task list about the change in plan.md file.
 category: Workflow
 tags: [workflow, artifacts, experimental]
@@ -12,22 +12,22 @@ I'll create a plan and task list with artifact:
 
 ---
 
-**Input**: The argument after `/aidev:plan` is optional, if provided take into account.
+**Input**: The argument after `/softspec:plan` is optional, if provided take into account.
 
 **Steps**
 
 1. **Detect change name**
-   Detect change name from `aidev/state.json` file. With that change name, read the change definition file `aidev/changes/change-name/definition.md` file. That file contains last change request details. This file will be used to generate next file.
+   Detect change name from `softspec/state.json` file. With that change name, read the change definition file `softspec/changes/change-name/definition.md` file. That file contains last change request details. This file will be used to generate next file.
 
 2. **Create plan.md file**
-   Create a file named `plan.md` under the change file. For example is change name is `add-user-auth`; file path will be `aidev/changes/add-user-auth/plan.md`
+   Create a file named `plan.md` under the change file. For example is change name is `add-user-auth`; file path will be `softspec/changes/add-user-auth/plan.md`
    In this file write a plan and task list with checkboxes from change request in `definition.md` file that in the same directory.
    Plan must shows the end to end solution.
    Tasks must shows the solution as small chunks of changes.
 
    At writing `plan.md` file use this template:
    ```
-   # AiDev Plan File
+   # Softspec Plan File
 
    ## Plan
    in this section demonstrate the end to end solution.
@@ -42,7 +42,7 @@ I'll create a plan and task list with artifact:
    ```
 
 3. **Update state.md file**
-   Update `aidev/state.json` file with change name and status 'planned'. If this file not exist; create it with content below:
+   Update `softspec/state.json` file with change name and status 'planned'. If this file not exist; create it with content below:
    ```
    {
       "current-change": {
@@ -54,4 +54,4 @@ I'll create a plan and task list with artifact:
 
 4. **Guiding user**
    Guide user to review plan.md file. And it he thinks something is missing, he need to update file manually or with ai.
-   Guide user to next step. User can move next step with `/aidev:implement`
+   Guide user to next step. User can move next step with `/softspec:implement`
